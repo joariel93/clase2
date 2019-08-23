@@ -15,7 +15,7 @@ int main(void) {
 	int valor;
 valor = calcularMitad(&valor);
 
-printf("La mitad del numero  ingresado es %d",valor);
+printf("La mitad del numero  ingresado es: %d",valor);
 int calcularMitad(int* vla){
 	int numero;
 	printf("Ingrese un numero: ");
