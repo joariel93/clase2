@@ -20,7 +20,7 @@ int calcularMitad(int* vla){
 	int numero;
 	printf("Ingrese un numero: ");
 	scanf("%d",&numero);
-	*vla=numero*0.5;
+	*vla=numero*0.25;
 	return 0;
 	}
 
