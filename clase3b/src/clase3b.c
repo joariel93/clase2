@@ -16,19 +16,18 @@ int numero;
 int maximo;
 int minimo;
 int cantidadNumeros;
-int flag=0;
 int i;
 printf("Ingrese la cantidad de números que desea ingresar: ");
 scanf("%d",&cantidadNumeros);
-for(i=cantidadNumeros;i>0;i--){
+for(i=0;i<cantidadNumeros;i++){
 	printf("Ingrese un número: ");
 	scanf("%d",&numero);
-	if(numero>maximo||flag==0){
+	if(i==0||numero>maximo){
 		maximo=numero;
 	}
-	if(numero<minimo||flag==0){
+	if(i==0||numero<minimo){
 		minimo=numero;
-		flag=1;
+
 	}
 }
 printf("El numero máximo ingresado fue: %d\n",maximo);
