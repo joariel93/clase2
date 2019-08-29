@@ -11,10 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int calculaMaxYMin(int*,int*,int*,int*);
+int calculaMaxYMin(int numero,int*max,int*min);
 int cuentaIteraciones(int*);
-int acumulaNumeros(int*,int*);
-int pideNumero(int*);
+int acumulaNumeros(int numero,int *acumulador);
+int pideNumero(int* numero);
 int main(void) {
 	int numero;
 	int max;
@@ -25,12 +25,18 @@ int main(void) {
 	char seguir;
 	int flag=0;
 
+
 	do{
 		pideNumero(&numero);
-		acumulaNumeros(&numero,&acumulador);
+		acumulaNumeros(numero,&acumulador);
 		cuentaIteraciones(&contador);
-		calculaMaxYMin(&numero,&max,&min,&flag);
-
+if(flag==0){
+	max=numero;
+	min=numero;
+	flag=1;
+}else{
+		calculaMaxYMin(numero,&max,&min);
+}
 		printf("Desea continuar? S/N ");
 		__fpurge(stdin);
 		scanf("%c",&seguir);
@@ -52,11 +58,11 @@ int pideNumero(int* numero){
 return 0;
 
 }
-int acumulaNumeros(int* numero,int *acumulador){
+int acumulaNumeros(int numero,int *acumulador){
 	int acum;
 	int num;
 	acum=*acumulador;
-	num=*numero;
+	num=numero;
 	acum=acum+num;
 	*acumulador=acum;
 	return 0;
@@ -68,24 +74,21 @@ int cuentaIteraciones (int *contador){
 	*contador=cont;
 	return 0;
 }
-int calculaMaxYMin(int*numero,int*max,int*min,int*flag){
-	int num;
+int calculaMaxYMin(int numero,int*max,int*min){
+
 	int maximo;
 	int minimo;
-	int flagg;
-	num=*numero;
-	flagg=*flag;
-	if(flagg==0||maximo<num){
-		maximo=num;
-		flagg=1;
+	maximo=*max;
+	minimo=*min;
+	if(maximo<numero){
+		maximo=numero;
 	}
-	if(flagg==1||minimo>num){
-		minimo=num;
-		flagg=2;
+	if(minimo>numero){
+		minimo=numero;
 	}
 	*max=maximo;
 	*min=minimo;
-	*flag=1;
+
 	return 0;
 
 }
