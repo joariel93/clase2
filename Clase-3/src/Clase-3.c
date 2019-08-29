@@ -12,6 +12,23 @@
 #include <stdlib.h>
 
 int main(void) {
-	puts("!!!Hello World!!!"); /* prints !!!Hello World!!! */
-	return EXIT_SUCCESS;
+	int numero;
+	int max;
+	int min;
+	int acumulador=0;
+	int contador=0;
+	int promedio;
+	char seguir;
+	int flag=0;
+
+	do{
+		printf("Ingrese un número: ");
+		scanf("%d",&numero);
+		acumulador=acumulador+numero;
+		contador++;
+		printf("Desea continuar? S/N ");
+		scanf("%c",&seguir);
+	}while(seguir!='n');
+promedio=acumulador/contador;
+printf("El promedio de los numeros ingresados fue: %d",&promedio);
 }
