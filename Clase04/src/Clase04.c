@@ -13,7 +13,7 @@
 #include "utn.h"
 int main(void) {
 	int num;
-	int r = getNumero(&num,100,1,4);
+	int r = utn_getNumero(&num,100,1,4);
 
 	if(r==0)
 	{

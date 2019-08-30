@@ -6,7 +6,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-int getNumero(int* num,int maximo,int minimo,int intentos)
+int utn_getNumero(int* num,int maximo,int minimo,int intentos)
 {
 	int numero=*num;
 	int flag=0;
