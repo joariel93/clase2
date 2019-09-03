@@ -13,28 +13,28 @@ float factorialResultA;
 float factorialResultB;
 
 float utn_pideDosNumeros(*firstNumber,*secondNumber);
-float utn_sumar(firstNumber,secondNumber,*sumResult);
-float utn_restar(firstNumber,secondNumber,*subtractionResult);
-float utn_multiplicar(firstNumber,secondNumber,*multiplicationResult);
+float utn_sumar(&firstNumber,&secondNumber,*sumResult);
+float utn_restar(&firstNumber,&secondNumber,*subtractionResult);
+float utn_multiplicar(&firstNumber,&secondNumber,*multiplicationResult);
 if(secondNumber!=0)
 {
-	float utn_dividir(firstNumber,secondNumber,*divisionResult);
+	float utn_dividir(&firstNumber,&secondNumber,*divisionResult);
 }
-float utn_factorizar2Numeros(firstNumber,secondNumber,*factorialResultA,*factorialResultB);
+float utn_factorizar2Numeros(&firstNumber,&secondNumber,*factorialResultA,*factorialResultB);
 
-printf("Los números ingresados han sido: %.2f y %.2f\n",&firstNumber,&secondNumber);
-printf("La suma de los números es: %.2f",&sumResult);
+printf("Los nÃºmeros ingresados han sido: %.2f y %.2f\n",&firstNumber,&secondNumber);
+printf("La suma de los nÃºmeros es: %.2f",&sumResult);
 printf("La resta del primero con el segundo es: %.2f",&subtractionResult);
-printf("La mulitplicacion de ambos números es: %.2f",&multiplicationResult);
+printf("La mulitplicacion de ambos nÃºmeros es: %.2f",&multiplicationResult);
 if(secondNumber==0)
 {
 	printf("No es posible dividir por cero.");
 }
 else
 {
-	printf("La división del primer numero por el segundo es: %.2f",&divisionResult);
+	printf("La divisiÃ³n del primer numero por el segundo es: %.2f",&divisionResult);
 }
-printf("El factorial del primer número es: %.2f y del segundo es: %.2f",&factorialResultA,&factorialResultB);
+printf("El factorial del primer nÃºmero es: %.2f y del segundo es: %.2f",&factorialResultA,&factorialResultB);
 return 0;
 }
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -45,54 +45,67 @@ return 0;
 
 float utn_pideDosNumeros(float* numberOne,float* numberTwo)
 {
-float numero1;
-float numero2;
+float number1;
+float number2;
 
-printf("Ingrese un número: \n");
+printf("Ingrese un nÃºmero: \n");
 __fpurge(stdin);
-scanf ("%f",&numero1);
+scanf ("%f",&number1);
 
-printf("Ingrese otro número: \n");
+printf("Ingrese otro nÃºmero: \n");
 __fpurge(stdin);
-scanf ("%f",&numero2);
+scanf ("%f",&number2);
 
-*numberOne=numero1;
-*numberTwo=numero2;
+*numberOne=number1;
+*numberTwo=number2;
 return 0;
 }
 float utn_sumar(float numberOne,float numberTwo,*float resultSum)
 {
-float resultado=numberOne+numberTwo;
-*resultSum=resultado;
+float result=numberOne+numberTwo;
+*resultSum=result;
 return 0;
 }
 float utn_restar(float numberOne,float numberTwo,*float resultSub)
 {
-float resultado=numberOne-numberTwo;
-*resultSub=resultado;
+float result=numberOne-numberTwo;
+*resultSub=resul;
 return 0;
 }
 float utn_multiplicar(float numberOne,float numberTwo,*float resultMult)
 {
-float resultado=numberOne*numberTwo;
-*resultMult=resultado;
+float result=numberOne*numberTwo;
+*resultMult=resulto;
 return 0;
 }
 float utn_dividir(float numberOne,float numberTwo,*float resultDiv)
 {
-float resultado=numberOne/numberTwo;
-*resultDiv=resultado;
+float result=numberOne/numberTwo;
+*resultDiv=result;
 return 0;
 }
 
 float utn_factorizar2Numeros(float numberOne,float numberTwo,*float resultFactA,*float resultFactB)
 {
-float resultadoA;
-float resultadoB;
+float resultA;
+float resultB;
 
-resultadoA=numberOne!;
-resultadoB=numberTwo!;
-*resultFactA=resultadoA;
-*resultFactB=resultadoB;
+resultA=numberOne!;
+resultB=numberTwo!;
+*resultFactA=resultA;
+*resultFactB=resultB;
 return 0;
 }
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#ifndef UTN_OPERACIONES_
+#define UTN_OPERACIONES_
+float utn_pideDosNumeros(float* numberOne,float* numberTwo);
+float utn_sumar(float numberOne,float numberTwo,*float resultSum);
+float utn_restar(float numberOne,float numberTwo,*float resultSub);
+float utn_multiplicar(float numberOne,float numberTwo,*float resultMult);
+float utn_dividir(float numberOne,float numberTwo,*float resultDiv);
+float utn_factorizar2Numeros(float numberOne,float numberTwo,*float resultFactA,*float resultFactB);
+
+#endif /* UTN_H_ */
